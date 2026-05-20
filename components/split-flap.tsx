@@ -44,23 +44,23 @@ function SplitFlapCharacter({ char, delay = 0 }: SplitFlapCharacterProps) {
   }, [char, delay])
 
   return (
-    <div className="relative inline-block w-[0.7em] h-[1.2em] mx-[1px]">
+    <div className="relative inline-block w-[0.8em] h-[1.2em] mx-[2px]">
       <div
         className={`
-          absolute inset-0 bg-secondary rounded-sm
+          absolute inset-0 bg-card rounded-sm
           flex items-center justify-center
           font-mono font-bold text-foreground
-          border border-border/50
+          border border-foreground/10
           ${isFlipping ? "animate-pulse" : ""}
         `}
         style={{ 
-          boxShadow: "inset 0 1px 2px rgba(0,0,0,0.5), 0 2px 4px rgba(0,0,0,0.3)",
+          boxShadow: "inset 0 2px 4px rgba(0,0,0,0.4), 0 4px 8px rgba(0,0,0,0.3)",
           perspective: "1000px"
         }}
       >
         <span className="relative z-10">{displayChar}</span>
         {/* Center line */}
-        <div className="absolute left-0 right-0 h-[1px] top-1/2 bg-background/30" />
+        <div className="absolute left-0 right-0 h-[1px] top-1/2 bg-background/20" />
       </div>
     </div>
   )
@@ -73,7 +73,7 @@ interface SplitFlapDisplayProps {
 
 export function SplitFlapDisplay({ text, className = "" }: SplitFlapDisplayProps) {
   return (
-    <div className={`flex flex-wrap justify-center ${className}`}>
+    <div className={`flex flex-wrap justify-center text-7xl md:text-9xl lg:text-[10rem] ${className}`}>
       {text.split("").map((char, index) => (
         <SplitFlapCharacter key={index} char={char} delay={index * 80} />
       ))}

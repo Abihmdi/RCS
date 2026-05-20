@@ -11,7 +11,8 @@ import {
   Search,
   MessageSquare,
   Wrench,
-  Shield
+  Shield,
+  Mail
 } from "lucide-react"
 
 const services = [
@@ -19,25 +20,21 @@ const services = [
     icon: Zap,
     title: "Technology Modernization",
     description: "We work end-to-end with clients to ensure effective business transformation - utilizing management systems, automation, customer data management, and more.",
-    color: "from-blue-500/20 to-cyan-500/20",
   },
   {
     icon: BarChart3,
     title: "Data Analysis and Processing",
     description: "Identifying patterns, trends, and opportunities from collected data, as well as applying analysis techniques to gain valuable insights and assist clients in making better decisions using Artificial Intelligence.",
-    color: "from-green-500/20 to-emerald-500/20",
   },
   {
     icon: Lightbulb,
     title: "Product & Service Innovation",
     description: "Conceiving, developing, and expanding emerging new ventures. We equip our client teams with the software, tools, and capabilities needed to achieve success independently, such as creating applications or websites.",
-    color: "from-orange-500/20 to-yellow-500/20",
   },
   {
     icon: Server,
     title: "Technology Infrastructure",
     description: "We provide services that encompass planning, implementation, and management of necessary infrastructure, including communication networks, servers, hardware, and software. For instance, local network and CCTV implementations.",
-    color: "from-purple-500/20 to-pink-500/20",
   },
 ]
 
@@ -87,22 +84,19 @@ function ServiceCard({ service, index, isExpanded, onToggle }: ServiceCardProps)
         className={`
           glass rounded-2xl p-6 h-full cursor-pointer
           transition-all duration-300 relative overflow-hidden
-          ${isExpanded ? "ring-2 ring-primary" : "hover:border-primary/30"}
+          ${isExpanded ? "ring-1 ring-foreground/30" : "hover:border-foreground/20"}
         `}
         onClick={onToggle}
       >
         {/* Background gradient */}
         <div 
-          className={`
-            absolute inset-0 bg-gradient-to-br ${service.color} 
-            opacity-0 group-hover:opacity-100 transition-opacity duration-300
-          `} 
+          className="absolute inset-0 bg-gradient-to-br from-foreground/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
         />
 
         <div className="relative">
           {/* Icon */}
-          <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/20 transition-colors">
-            <service.icon size={28} className="text-primary" />
+          <div className="w-14 h-14 rounded-xl bg-foreground/10 flex items-center justify-center mb-5 group-hover:bg-foreground/15 transition-colors">
+            <service.icon size={28} className="text-foreground" />
           </div>
 
           {/* Title */}
@@ -116,11 +110,11 @@ function ServiceCard({ service, index, isExpanded, onToggle }: ServiceCardProps)
           </p>
 
           {/* Expand indicator */}
-          <div className="flex items-center gap-2 mt-4 text-primary text-sm font-mono">
+          <div className="flex items-center gap-2 mt-4 text-foreground/70 text-sm font-mono">
             <span>Learn more</span>
             <ArrowRight 
               size={14} 
-              className={`transition-transform group-hover:translate-x-1`} 
+              className="transition-transform group-hover:translate-x-1" 
             />
           </div>
         </div>
@@ -148,7 +142,7 @@ export function ServicesSection() {
           transition={{ duration: 0.6 }}
           className="mb-16"
         >
-          <span className="inline-block px-4 py-1.5 rounded-full border border-primary/30 bg-primary/5 text-sm font-mono text-primary mb-4">
+          <span className="inline-block px-4 py-1.5 rounded-full border border-foreground/10 bg-foreground/5 text-sm font-mono text-foreground/70 mb-4 tracking-wider">
             02 — Our Activities
           </span>
           <h2 
@@ -205,17 +199,17 @@ export function ServicesSection() {
               >
                 {/* Connector line */}
                 {index < processSteps.length - 1 && (
-                  <div className="hidden lg:block absolute top-8 left-[60%] w-full h-[2px] bg-gradient-to-r from-primary/50 to-transparent" />
+                  <div className="hidden lg:block absolute top-8 left-[60%] w-full h-[1px] bg-gradient-to-r from-foreground/30 to-transparent" />
                 )}
                 
                 <div className="glass rounded-xl p-6 relative z-10 h-full">
                   {/* Step number */}
-                  <div className="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-sm font-mono font-bold text-primary-foreground">
+                  <div className="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-foreground flex items-center justify-center text-sm font-mono font-bold text-background">
                     {index + 1}
                   </div>
                   
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 mt-2">
-                    <step.icon size={24} className="text-primary" />
+                  <div className="w-12 h-12 rounded-lg bg-foreground/10 flex items-center justify-center mb-4 mt-2">
+                    <step.icon size={24} className="text-foreground" />
                   </div>
                   
                   <h4 className="font-mono font-semibold text-foreground mb-2">
@@ -242,11 +236,10 @@ export function ServicesSection() {
             Need a custom solution? {"Let's"} discuss your project.
           </p>
           <a
-            href="https://wa.me/6281905493347"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-full font-mono text-sm hover:bg-primary/90 transition-all hover:scale-105"
+            href="mailto:ruangciptasolusi@gmail.com"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-foreground text-background rounded-full font-mono text-sm hover:bg-foreground/90 transition-all hover:scale-105"
           >
+            <Mail size={16} />
             Get in Touch
             <ArrowRight size={16} />
           </a>

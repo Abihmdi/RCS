@@ -2,7 +2,7 @@
 
 import { useState, useRef } from "react"
 import { motion, useInView, AnimatePresence } from "framer-motion"
-import { ExternalLink, Smartphone, Globe, Database, Building2 } from "lucide-react"
+import { Smartphone, Globe, Database, Building2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const categories = ["All", "Mobile", "Web", "Enterprise"] as const
@@ -18,7 +18,6 @@ const projects = [
     solution: "We have developed Heystetik, an innovative application designed for beauty clinics. Heystetik allows users to consult with doctors, book treatments, purchase skincare products, and engage in discussions with other users through streaming features.",
     features: ["Doctor Consultation", "Treatment Booking", "Commerce", "Stream", "Progress Tracker"],
     icon: Smartphone,
-    color: "from-pink-500/20 to-rose-500/20",
     type: "Project",
   },
   {
@@ -30,7 +29,6 @@ const projects = [
     solution: "We created Braincoach, a website designed for cognitive assessment and training. Leveraging AI capabilities, Braincoach supports accurate assessment and provides cognitive training games to enhance brain function.",
     features: ["Cognitive Assessment (MOCA INA)", "AI Integration", "Training Games"],
     icon: Globe,
-    color: "from-blue-500/20 to-cyan-500/20",
     type: "Project",
   },
   {
@@ -42,7 +40,6 @@ const projects = [
     solution: "Patrolink is a security management application that simplifies attendance tracking, patrol management, and emergency responses. This application utilizes QR codes for attendance verification and ERP-based patrols.",
     features: ["Attendance Tracking", "Patrol Management", "SOS Button", "Anti Fake GPS"],
     icon: Smartphone,
-    color: "from-green-500/20 to-emerald-500/20",
     type: "Project",
   },
   {
@@ -54,7 +51,6 @@ const projects = [
     solution: "We implement a customized CRM for Bill Muhdor, enhancing his team's ability to manage customer information and communication, as well as facilitating marketing aspects and operational aspects of his art business.",
     features: ["Customer Management", "Marketing Automation", "Operational Efficiency"],
     icon: Database,
-    color: "from-orange-500/20 to-yellow-500/20",
     type: "Project",
   },
   {
@@ -66,7 +62,6 @@ const projects = [
     solution: "Our Hospital Management System provides an integrated platform to handle all hospital operations efficiently. This system also includes ERP-based medical record management.",
     features: ["Patient Registration", "Doctor & Clinic Management", "Inventory and Pharmacy", "Billing System", "Medical Record"],
     icon: Building2,
-    color: "from-purple-500/20 to-pink-500/20",
     type: "Project",
   },
   {
@@ -78,7 +73,6 @@ const projects = [
     solution: "We are developing a Recruitment Tool to automate daily recruitment tasks, including test administration, automated scoring, and interview scheduling integrated with email, Google Calendar, and video conferencing tools.",
     features: ["Automated Testing", "Interview Scheduling", "Operational Automation"],
     icon: Database,
-    color: "from-indigo-500/20 to-violet-500/20",
     type: "Project",
   },
   {
@@ -90,7 +84,6 @@ const projects = [
     solution: "Travelator is an ERP software specifically designed to simplify travel business operations. It streamlines various aspects of travel management, including bookings, quotations, billing, task management, and financial tracking.",
     features: ["Order Management", "Offers and Billing", "Task Management", "Revenue & Expenditure Management"],
     icon: Globe,
-    color: "from-cyan-500/20 to-teal-500/20",
     type: "Product",
   },
 ]
@@ -116,11 +109,11 @@ function ProjectCard({ project, index }: ProjectCardProps) {
       className="group"
     >
       <div 
-        className="glass rounded-2xl overflow-hidden h-full transition-all duration-300 hover:border-primary/30 cursor-pointer"
+        className="glass rounded-2xl overflow-hidden h-full transition-all duration-300 hover:border-foreground/20 cursor-pointer"
         onClick={() => setIsExpanded(!isExpanded)}
       >
         {/* Image placeholder with gradient */}
-        <div className={`relative h-40 bg-gradient-to-br ${project.color} overflow-hidden`}>
+        <div className="relative h-40 bg-gradient-to-br from-foreground/10 to-foreground/5 overflow-hidden">
           <div className="absolute inset-0 flex items-center justify-center">
             <project.icon size={48} className="text-foreground/20" />
           </div>
@@ -129,7 +122,7 @@ function ProjectCard({ project, index }: ProjectCardProps) {
             {project.type}
           </span>
           {/* Category badge */}
-          <span className="absolute top-4 right-4 px-3 py-1 rounded-full bg-primary/80 backdrop-blur-sm text-xs font-mono text-primary-foreground">
+          <span className="absolute top-4 right-4 px-3 py-1 rounded-full bg-foreground/80 backdrop-blur-sm text-xs font-mono text-background">
             {project.category}
           </span>
         </div>
@@ -139,7 +132,7 @@ function ProjectCard({ project, index }: ProjectCardProps) {
           <h3 className="font-mono text-lg font-semibold text-foreground mb-1">
             {project.title}
           </h3>
-          <p className="text-sm text-primary font-mono mb-3">
+          <p className="text-sm text-foreground/70 font-mono mb-3">
             {project.subtitle}
           </p>
           
@@ -158,7 +151,7 @@ function ProjectCard({ project, index }: ProjectCardProps) {
                 className="overflow-hidden"
               >
                 <div className="pt-4 border-t border-border mb-4">
-                  <div className="font-mono text-xs text-primary mb-2">// Solution</div>
+                  <div className="font-mono text-xs text-foreground/70 mb-2 tracking-wider">// Solution</div>
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     {project.solution}
                   </p>
@@ -178,7 +171,7 @@ function ProjectCard({ project, index }: ProjectCardProps) {
               </span>
             ))}
             {!isExpanded && project.features.length > 3 && (
-              <span className="px-2 py-1 rounded-md bg-primary/10 text-xs font-mono text-primary">
+              <span className="px-2 py-1 rounded-md bg-foreground/10 text-xs font-mono text-foreground">
                 +{project.features.length - 3} more
               </span>
             )}
@@ -208,7 +201,7 @@ export function PortfolioSection() {
           transition={{ duration: 0.6 }}
           className="mb-12"
         >
-          <span className="inline-block px-4 py-1.5 rounded-full border border-primary/30 bg-primary/5 text-sm font-mono text-primary mb-4">
+          <span className="inline-block px-4 py-1.5 rounded-full border border-foreground/10 bg-foreground/5 text-sm font-mono text-foreground/70 mb-4 tracking-wider">
             04 — Portfolio
           </span>
           <h2 
@@ -236,7 +229,9 @@ export function PortfolioSection() {
               size="sm"
               onClick={() => setActiveCategory(category)}
               className={`font-mono ${
-                activeCategory === category ? "" : "border-muted-foreground/30"
+                activeCategory === category 
+                  ? "bg-foreground text-background hover:bg-foreground/90" 
+                  : "border-foreground/20 hover:border-foreground/40"
               }`}
             >
               {category}

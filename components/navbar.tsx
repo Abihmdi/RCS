@@ -71,11 +71,11 @@ export function Navbar() {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
-            <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center glow-blue">
-              <span className="font-mono font-bold text-primary-foreground text-lg">R</span>
+            <div className="w-10 h-10 rounded-lg bg-foreground flex items-center justify-center">
+              <span className="font-mono font-bold text-background text-lg">R</span>
             </div>
             <span className="font-mono text-lg font-medium tracking-tight">
-              RCS<span className="text-primary">.</span>
+              RCS<span className="text-foreground/60">.</span>
             </span>
           </motion.a>
 
@@ -91,7 +91,7 @@ export function Navbar() {
                 }}
                 className={`relative px-4 py-2 font-mono text-sm transition-colors ${
                   activeSection === link.href.slice(1)
-                    ? "text-primary"
+                    ? "text-foreground"
                     : "text-muted-foreground hover:text-foreground"
                 }`}
                 whileHover={{ y: -2 }}
@@ -101,7 +101,7 @@ export function Navbar() {
                 {activeSection === link.href.slice(1) && (
                   <motion.div
                     layoutId="activeNav"
-                    className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-primary"
+                    className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-foreground"
                   />
                 )}
               </motion.a>
@@ -116,7 +116,7 @@ export function Navbar() {
           >
             <Button
               onClick={() => handleNavClick("#contact")}
-              className="font-mono glow-blue"
+              className="font-mono bg-foreground text-background hover:bg-foreground/90"
             >
               Get Started
             </Button>
@@ -165,7 +165,7 @@ export function Navbar() {
                   transition={{ duration: 0.3, delay: 0.1 + index * 0.05 }}
                   className={`font-mono text-2xl transition-colors ${
                     activeSection === link.href.slice(1)
-                      ? "text-primary glow-text"
+                      ? "text-foreground glow-text"
                       : "text-muted-foreground hover:text-foreground"
                   }`}
                 >
@@ -182,7 +182,7 @@ export function Navbar() {
                 <Button
                   onClick={() => handleNavClick("#contact")}
                   size="lg"
-                  className="font-mono glow-blue"
+                  className="font-mono bg-foreground text-background hover:bg-foreground/90"
                 >
                   Get Started
                 </Button>

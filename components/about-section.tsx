@@ -25,7 +25,7 @@ export function AboutSection() {
           transition={{ duration: 0.6 }}
           className="mb-16"
         >
-          <span className="inline-block px-4 py-1.5 rounded-full border border-primary/30 bg-primary/5 text-sm font-mono text-primary mb-4">
+          <span className="inline-block px-4 py-1.5 rounded-full border border-foreground/10 bg-foreground/5 text-sm font-mono text-foreground/70 mb-4 tracking-wider">
             01 — About Us
           </span>
           <h2 
@@ -55,17 +55,17 @@ export function AboutSection() {
 
             {/* Value propositions */}
             <div className="glass rounded-xl p-6 space-y-4">
-              <div className="font-mono text-sm text-primary mb-3">// What we deliver</div>
+              <div className="font-mono text-sm text-foreground/70 mb-3 tracking-wider">// What we deliver</div>
               <div className="flex items-start gap-3">
-                <div className="w-2 h-2 rounded-full bg-primary mt-2 shrink-0" />
+                <div className="w-2 h-2 rounded-full bg-foreground mt-2 shrink-0" />
                 <p className="text-muted-foreground">Helping to improve management efficiency</p>
               </div>
               <div className="flex items-start gap-3">
-                <div className="w-2 h-2 rounded-full bg-primary mt-2 shrink-0" />
+                <div className="w-2 h-2 rounded-full bg-foreground mt-2 shrink-0" />
                 <p className="text-muted-foreground">Ensure effective customer management</p>
               </div>
               <div className="flex items-start gap-3">
-                <div className="w-2 h-2 rounded-full bg-primary mt-2 shrink-0" />
+                <div className="w-2 h-2 rounded-full bg-foreground mt-2 shrink-0" />
                 <p className="text-muted-foreground">{"Enhance our clients' awareness and trust on the internet"}</p>
               </div>
             </div>
@@ -79,10 +79,10 @@ export function AboutSection() {
           >
             <div className="glass rounded-2xl p-8 relative overflow-hidden">
               {/* Decorative gradient */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-3xl" />
+              <div className="absolute top-0 right-0 w-32 h-32 bg-foreground/5 rounded-full blur-3xl" />
               
               <div className="relative">
-                <div className="font-mono text-sm text-primary mb-6">// Our Tech Stack</div>
+                <div className="font-mono text-sm text-foreground/70 mb-6 tracking-wider">// Our Tech Stack</div>
                 <p className="text-muted-foreground mb-6 leading-relaxed">
                   Various tech stacks and providing comprehensive analysis of the pros and cons of each option. Helping clients gain a clear understanding of how the technology impacts their business.
                 </p>
@@ -95,20 +95,20 @@ export function AboutSection() {
                       initial={{ opacity: 0, scale: 0.8 }}
                       animate={isInView ? { opacity: 1, scale: 1 } : {}}
                       transition={{ duration: 0.3, delay: 0.4 + index * 0.05 }}
-                      className="px-3 py-1.5 rounded-full bg-secondary border border-border text-sm font-mono text-muted-foreground hover:border-primary/50 hover:text-primary transition-colors"
+                      className="px-3 py-1.5 rounded-full bg-secondary border border-border text-sm font-mono text-muted-foreground hover:border-foreground/30 hover:text-foreground transition-colors"
                     >
                       {tech}
                     </motion.span>
                   ))}
-                  <span className="px-3 py-1.5 rounded-full bg-primary/10 border border-primary/30 text-sm font-mono text-primary">
+                  <span className="px-3 py-1.5 rounded-full bg-foreground/10 border border-foreground/20 text-sm font-mono text-foreground">
                     + more
                   </span>
                 </div>
 
                 {/* Company badge */}
                 <div className="flex items-center gap-4 pt-6 border-t border-border">
-                  <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
-                    <span className="font-mono font-bold text-primary">RCS</span>
+                  <div className="w-12 h-12 rounded-full bg-foreground/10 flex items-center justify-center">
+                    <span className="font-mono font-bold text-foreground">RCS</span>
                   </div>
                   <div>
                     <div className="font-mono font-medium text-foreground">PT Ruang Cipta Solusi</div>
