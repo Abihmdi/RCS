@@ -8,41 +8,38 @@ export function Footer() {
   }
 
   return (
-    <footer className="py-12 border-t border-border">
-      <div className="container mx-auto px-6 md:px-8">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          {/* Brand */}
-          <div className="flex items-center gap-8">
-            <span className="text-lg font-semibold tracking-tight">
-              RCS<span className="text-primary">.</span>
+    <footer className="py-8 border-t border-[rgba(255,255,255,0.06)]">
+      <div className="max-w-5xl mx-auto px-4">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-6">
+            <span className="text-sm font-semibold tracking-tight text-[#FAFAFA]">
+              RCS<span className="text-[#22D3EE]">.</span>
             </span>
-            <span className="text-sm text-muted-foreground">
+            <span className="text-xs text-[#71717A]">
               Ruang Cipta Solusi
             </span>
           </div>
 
-          {/* Right side */}
-          <div className="flex items-center gap-8">
+          <div className="flex items-center gap-6">
             <a 
               href="mailto:ruangciptasolusi@gmail.com"
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              className="text-xs text-[#71717A] hover:text-[#FAFAFA] transition-colors duration-150"
             >
               ruangciptasolusi@gmail.com
             </a>
             
             <button
               onClick={scrollToTop}
-              className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+              className="flex items-center gap-1.5 text-xs text-[#71717A] hover:text-[#FAFAFA] transition-colors duration-150"
             >
-              <ArrowUp size={14} />
+              <ArrowUp size={12} />
               Top
             </button>
           </div>
         </div>
 
-        {/* Copyright */}
-        <div className="mt-8 pt-8 border-t border-border">
-          <p className="text-sm text-muted-foreground text-center">
+        <div className="mt-6 pt-6 border-t border-[rgba(255,255,255,0.06)]">
+          <p className="text-xs text-[#71717A] text-center">
             &copy; {new Date().getFullYear()} PT Ruang Cipta Solusi. All rights reserved.
           </p>
         </div>

@@ -1,6 +1,5 @@
 "use client"
 
-import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 
 export function HeroSection() {
@@ -12,93 +11,41 @@ export function HeroSection() {
   }
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center">
-      {/* Subtle gradient background */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/5 via-transparent to-transparent" />
-      
-      <div className="container relative z-10 px-6 md:px-8 pt-32 pb-20">
-        <div className="max-w-4xl mx-auto">
-          {/* Small badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="mb-8"
-          >
-            <span className="inline-flex items-center gap-2 text-sm text-muted-foreground">
-              <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-              Digital Systems Studio
-            </span>
-          </motion.div>
+    <section id="home" className="min-h-screen flex items-center justify-center pt-14">
+      <div className="max-w-5xl mx-auto px-4 py-24">
+        <div className="max-w-3xl">
+          <p className="text-xs text-[#71717A] mb-6 tracking-wide">
+            Digital Systems Studio
+          </p>
 
-          {/* Main headline - Linear style large typography */}
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-5xl md:text-7xl lg:text-8xl font-semibold tracking-tight leading-[0.95] mb-8 text-balance"
-          >
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.1] mb-6 text-[#FAFAFA]">
             Build better
             <br />
-            <span className="text-primary">digital systems</span>
-          </motion.h1>
+            <span className="text-[#22D3EE]">digital systems</span>
+          </h1>
 
-          {/* Subheadline - clean and minimal */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-12 leading-relaxed text-pretty"
-          >
+          <p className="text-base text-[#71717A] max-w-xl mb-10 leading-relaxed">
             We build modern digital systems that help businesses scale, automate, 
             and grow through technology, data, and intelligent solutions.
-          </motion.p>
+          </p>
 
-          {/* CTA Buttons - minimal style */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-col sm:flex-row gap-4"
-          >
+          <div className="flex flex-col sm:flex-row gap-3">
             <a
               href="mailto:ruangciptasolusi@gmail.com"
-              className="group inline-flex items-center justify-center gap-2 px-6 py-3 bg-foreground text-background rounded-lg font-medium text-sm hover:bg-foreground/90 transition-colors"
+              className="group inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-[#FAFAFA] text-[#0A0A0B] rounded-md font-medium text-sm hover:bg-[#FAFAFA]/90 transition-colors duration-150"
             >
               Start a project
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+              <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform duration-150" />
             </a>
             <button
               onClick={() => scrollToSection("portfolio")}
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 text-foreground rounded-lg font-medium text-sm border border-border hover:bg-card transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-4 py-2.5 text-[#FAFAFA] rounded-md font-medium text-sm border border-[rgba(255,255,255,0.06)] hover:bg-[#111113] transition-colors duration-150"
             >
               View work
             </button>
-          </motion.div>
+          </div>
         </div>
       </div>
-
-      {/* Scroll indicator - subtle */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 0.5 }}
-        className="absolute bottom-12 left-1/2 -translate-x-1/2"
-      >
-        <motion.button
-          onClick={() => scrollToSection("about")}
-          className="flex flex-col items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
-          aria-label="Scroll to about section"
-        >
-          <span className="w-5 h-8 rounded-full border border-border flex items-start justify-center p-1.5">
-            <motion.span 
-              className="w-1 h-1.5 rounded-full bg-muted-foreground"
-              animate={{ y: [0, 8, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-            />
-          </span>
-        </motion.button>
-      </motion.div>
     </section>
   )
 }

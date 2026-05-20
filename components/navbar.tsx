@@ -1,7 +1,6 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X } from "lucide-react"
 
 const navLinks = [
@@ -17,9 +16,8 @@ export function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50)
+      setScrolled(window.scrollY > 20)
     }
-
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
@@ -34,31 +32,26 @@ export function Navbar() {
 
   return (
     <>
-      <motion.header
-        initial={{ y: -100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled ? "bg-background/80 backdrop-blur-lg border-b border-border" : ""
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
+          scrolled 
+            ? "bg-[#0A0A0B]/90 backdrop-blur-md border-b border-[rgba(255,255,255,0.06)]" 
+            : "bg-transparent"
         }`}
       >
-        <nav className="container mx-auto px-6 md:px-8 h-16 flex items-center justify-between">
-          {/* Logo */}
+        <nav className="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
           <a
             href="#home"
             onClick={(e) => {
               e.preventDefault()
               handleNavClick("#home")
             }}
-            className="flex items-center gap-2"
+            className="text-sm font-semibold tracking-tight text-[#FAFAFA]"
           >
-            <span className="text-lg font-semibold tracking-tight">
-              RCS<span className="text-primary">.</span>
-            </span>
+            RCS<span className="text-[#22D3EE]">.</span>
           </a>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -67,14 +60,13 @@ export function Navbar() {
                   e.preventDefault()
                   handleNavClick(link.href)
                 }}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                className="text-xs text-[#71717A] hover:text-[#FAFAFA] transition-colors duration-150"
               >
                 {link.label}
               </a>
             ))}
           </div>
 
-          {/* CTA Button - Desktop */}
           <div className="hidden md:block">
             <a
               href="#contact"
@@ -82,75 +74,52 @@ export function Navbar() {
                 e.preventDefault()
                 handleNavClick("#contact")
               }}
-              className="text-sm font-medium px-4 py-2 bg-foreground text-background rounded-lg hover:bg-foreground/90 transition-colors"
+              className="text-xs font-medium px-3 py-1.5 bg-[#FAFAFA] text-[#0A0A0B] rounded-md hover:bg-[#FAFAFA]/90 transition-colors duration-150"
             >
               Contact
             </a>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 text-foreground"
+            className="md:hidden p-1.5 text-[#FAFAFA]"
             onClick={() => setIsOpen(!isOpen)}
             aria-label={isOpen ? "Close menu" : "Open menu"}
           >
-            {isOpen ? <X size={20} /> : <Menu size={20} />}
+            {isOpen ? <X size={18} /> : <Menu size={18} />}
           </button>
         </nav>
-      </motion.header>
+      </header>
 
-      {/* Mobile Menu Overlay */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-40 bg-background md:hidden"
-          >
-            <motion.nav
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 20 }}
-              transition={{ duration: 0.3, delay: 0.1 }}
-              className="flex flex-col items-center justify-center h-full gap-8"
-            >
-              {navLinks.map((link, index) => (
-                <motion.a
-                  key={link.href}
-                  href={link.href}
-                  onClick={(e) => {
-                    e.preventDefault()
-                    handleNavClick(link.href)
-                  }}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 20 }}
-                  transition={{ duration: 0.3, delay: 0.1 + index * 0.05 }}
-                  className="text-2xl font-medium text-foreground hover:text-primary transition-colors"
-                >
-                  {link.label}
-                </motion.a>
-              ))}
-              <motion.a
-                href="#contact"
+      {/* Mobile Menu */}
+      {isOpen && (
+        <div className="fixed inset-0 z-40 bg-[#0A0A0B] md:hidden">
+          <nav className="flex flex-col items-center justify-center h-full gap-6">
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
                 onClick={(e) => {
                   e.preventDefault()
-                  handleNavClick("#contact")
+                  handleNavClick(link.href)
                 }}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 20 }}
-                transition={{ duration: 0.3, delay: 0.35 }}
-                className="mt-4 px-6 py-3 bg-foreground text-background rounded-lg font-medium"
+                className="text-xl font-medium text-[#FAFAFA] hover:text-[#22D3EE] transition-colors"
               >
-                Contact
-              </motion.a>
-            </motion.nav>
-          </motion.div>
-        )}
-      </AnimatePresence>
+                {link.label}
+              </a>
+            ))}
+            <a
+              href="#contact"
+              onClick={(e) => {
+                e.preventDefault()
+                handleNavClick("#contact")
+              }}
+              className="mt-4 px-5 py-2.5 bg-[#FAFAFA] text-[#0A0A0B] rounded-md font-medium text-sm"
+            >
+              Contact
+            </a>
+          </nav>
+        </div>
+      )}
     </>
   )
 }
