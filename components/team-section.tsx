@@ -2,14 +2,14 @@
 
 const team = [
   {
-    name: "Ayip Farouk",
-    role: "Founder",
-    initials: "AF",
-  },
-  {
     name: "Abi Hamdi",
     role: "Founder",
     initials: "AH",
+  },
+  {
+    name: "Ayip Farouk",
+    role: "Founder",
+    initials: "AF",
   },
 ]
 
