@@ -2,7 +2,7 @@
 
 import { useState, useRef } from "react"
 import { motion, useInView, AnimatePresence } from "framer-motion"
-import { Smartphone, Globe, Database, Building2 } from "lucide-react"
+import { ExternalLink, Smartphone, Globe, Database, Building2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const categories = ["All", "Mobile", "Web", "Enterprise"] as const
@@ -18,6 +18,7 @@ const projects = [
     solution: "We have developed Heystetik, an innovative application designed for beauty clinics. Heystetik allows users to consult with doctors, book treatments, purchase skincare products, and engage in discussions with other users through streaming features.",
     features: ["Doctor Consultation", "Treatment Booking", "Commerce", "Stream", "Progress Tracker"],
     icon: Smartphone,
+    color: "from-pink-500/20 to-rose-500/20",
     type: "Project",
   },
   {
@@ -29,6 +30,7 @@ const projects = [
     solution: "We created Braincoach, a website designed for cognitive assessment and training. Leveraging AI capabilities, Braincoach supports accurate assessment and provides cognitive training games to enhance brain function.",
     features: ["Cognitive Assessment (MOCA INA)", "AI Integration", "Training Games"],
     icon: Globe,
+    color: "from-blue-500/20 to-cyan-500/20",
     type: "Project",
   },
   {
@@ -40,6 +42,7 @@ const projects = [
     solution: "Patrolink is a security management application that simplifies attendance tracking, patrol management, and emergency responses. This application utilizes QR codes for attendance verification and ERP-based patrols.",
     features: ["Attendance Tracking", "Patrol Management", "SOS Button", "Anti Fake GPS"],
     icon: Smartphone,
+    color: "from-green-500/20 to-emerald-500/20",
     type: "Project",
   },
   {
@@ -51,6 +54,7 @@ const projects = [
     solution: "We implement a customized CRM for Bill Muhdor, enhancing his team's ability to manage customer information and communication, as well as facilitating marketing aspects and operational aspects of his art business.",
     features: ["Customer Management", "Marketing Automation", "Operational Efficiency"],
     icon: Database,
+    color: "from-orange-500/20 to-yellow-500/20",
     type: "Project",
   },
   {
@@ -62,6 +66,7 @@ const projects = [
     solution: "Our Hospital Management System provides an integrated platform to handle all hospital operations efficiently. This system also includes ERP-based medical record management.",
     features: ["Patient Registration", "Doctor & Clinic Management", "Inventory and Pharmacy", "Billing System", "Medical Record"],
     icon: Building2,
+    color: "from-purple-500/20 to-pink-500/20",
     type: "Project",
   },
   {
@@ -73,6 +78,7 @@ const projects = [
     solution: "We are developing a Recruitment Tool to automate daily recruitment tasks, including test administration, automated scoring, and interview scheduling integrated with email, Google Calendar, and video conferencing tools.",
     features: ["Automated Testing", "Interview Scheduling", "Operational Automation"],
     icon: Database,
+    color: "from-indigo-500/20 to-violet-500/20",
     type: "Project",
   },
   {
@@ -84,6 +90,7 @@ const projects = [
     solution: "Travelator is an ERP software specifically designed to simplify travel business operations. It streamlines various aspects of travel management, including bookings, quotations, billing, task management, and financial tracking.",
     features: ["Order Management", "Offers and Billing", "Task Management", "Revenue & Expenditure Management"],
     icon: Globe,
+    color: "from-cyan-500/20 to-teal-500/20",
     type: "Product",
   },
 ]
@@ -109,11 +116,11 @@ function ProjectCard({ project, index }: ProjectCardProps) {
       className="group"
     >
       <div 
-        className="glass rounded-2xl overflow-hidden h-full transition-all duration-300 hover:border-foreground/20 cursor-pointer"
+        className="glass rounded-2xl overflow-hidden h-full transition-all duration-300 hover:border-foreground/30 cursor-pointer"
         onClick={() => setIsExpanded(!isExpanded)}
       >
         {/* Image placeholder with gradient */}
-        <div className="relative h-40 bg-gradient-to-br from-foreground/10 to-foreground/5 overflow-hidden">
+        <div className={`relative h-40 bg-gradient-to-br ${project.color} overflow-hidden`}>
           <div className="absolute inset-0 flex items-center justify-center">
             <project.icon size={48} className="text-foreground/20" />
           </div>
@@ -150,31 +157,39 @@ function ProjectCard({ project, index }: ProjectCardProps) {
                 transition={{ duration: 0.3 }}
                 className="overflow-hidden"
               >
-                <div className="pt-4 border-t border-border mb-4">
-                  <div className="font-mono text-xs text-foreground/70 mb-2 tracking-wider">// Solution</div>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                <div className="pt-4 border-t border-border">
+                  <h4 className="text-sm font-mono font-semibold text-foreground mb-2">Solution</h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">
                     {project.solution}
                   </p>
+                  
+                  <h4 className="text-sm font-mono font-semibold text-foreground mb-2">Key Features</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {project.features.map((feature, i) => (
+                      <span 
+                        key={i}
+                        className="px-2 py-1 text-xs font-mono bg-secondary rounded-md text-secondary-foreground"
+                      >
+                        {feature}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </motion.div>
             )}
           </AnimatePresence>
 
-          {/* Features */}
-          <div className="flex flex-wrap gap-2">
-            {project.features.slice(0, isExpanded ? undefined : 3).map((feature) => (
-              <span
-                key={feature}
-                className="px-2 py-1 rounded-md bg-secondary text-xs font-mono text-muted-foreground"
-              >
-                {feature}
-              </span>
-            ))}
-            {!isExpanded && project.features.length > 3 && (
-              <span className="px-2 py-1 rounded-md bg-foreground/10 text-xs font-mono text-foreground">
-                +{project.features.length - 3} more
-              </span>
-            )}
+          {/* Expand indicator */}
+          <div className="mt-4 flex items-center justify-between">
+            <span className="text-xs text-muted-foreground font-mono">
+              {isExpanded ? "Click to collapse" : "Click to expand"}
+            </span>
+            <motion.div
+              animate={{ rotate: isExpanded ? 180 : 0 }}
+              className="w-6 h-6 rounded-full bg-secondary flex items-center justify-center"
+            >
+              <ExternalLink size={12} className="text-secondary-foreground" />
+            </motion.div>
           </div>
         </div>
       </div>
@@ -183,44 +198,45 @@ function ProjectCard({ project, index }: ProjectCardProps) {
 }
 
 export function PortfolioSection() {
+  const sectionRef = useRef(null)
+  const isInView = useInView(sectionRef, { once: true, margin: "-100px" })
   const [activeCategory, setActiveCategory] = useState<Category>("All")
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
 
-  const filteredProjects = activeCategory === "All" 
-    ? projects 
-    : projects.filter(p => p.category === activeCategory)
+  const filteredProjects = projects.filter(
+    project => activeCategory === "All" || project.category === activeCategory
+  )
 
   return (
-    <section id="portfolio" className="py-24 md:py-32 relative">
-      <div ref={ref} className="container mx-auto px-4">
-        {/* Section header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="mb-12"
-        >
-          <span className="inline-block px-4 py-1.5 rounded-full border border-foreground/10 bg-foreground/5 text-sm font-mono text-foreground/70 mb-4 tracking-wider">
-            04 — Portfolio
-          </span>
-          <h2 
-            className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6"
-            style={{ fontFamily: "var(--font-bebas-neue)" }}
-          >
-            SELECTED WORK
-          </h2>
-          <p className="text-muted-foreground max-w-3xl leading-relaxed text-balance">
-            Through a structured approach that includes case studies, solutions, and feature overviews, we provide a clear overview of how we address client challenges and achieve optimal efficiency.
-          </p>
-        </motion.div>
-
-        {/* Category filters */}
+    <section 
+      id="portfolio" 
+      ref={sectionRef}
+      className="relative py-24 md:py-32 bg-background"
+    >
+      <div className="container mx-auto px-4 md:px-6">
+        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex flex-wrap justify-start gap-2 mb-12"
+          transition={{ duration: 0.5 }}
+          className="text-center mb-16"
+        >
+          <span className="inline-block px-4 py-2 rounded-full bg-secondary text-secondary-foreground text-sm font-mono mb-6">
+            04 — Portfolio
+          </span>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 tracking-tight">
+            Our <span className="text-foreground/70">Work</span>
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            Explore our portfolio of successful projects across various industries
+          </p>
+        </motion.div>
+
+        {/* Category Filter */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="flex flex-wrap justify-center gap-3 mb-12"
         >
           {categories.map((category) => (
             <Button
@@ -228,10 +244,10 @@ export function PortfolioSection() {
               variant={activeCategory === category ? "default" : "outline"}
               size="sm"
               onClick={() => setActiveCategory(category)}
-              className={`font-mono ${
+              className={`font-mono transition-all ${
                 activeCategory === category 
-                  ? "bg-foreground text-background hover:bg-foreground/90" 
-                  : "border-foreground/20 hover:border-foreground/40"
+                  ? "bg-foreground text-background" 
+                  : "border-border hover:border-foreground/50"
               }`}
             >
               {category}
@@ -239,27 +255,16 @@ export function PortfolioSection() {
           ))}
         </motion.div>
 
-        {/* Projects grid */}
-        <motion.div layout className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Projects Grid */}
+        <motion.div 
+          layout
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
           <AnimatePresence mode="popLayout">
             {filteredProjects.map((project, index) => (
               <ProjectCard key={project.id} project={project} index={index} />
             ))}
           </AnimatePresence>
-        </motion.div>
-
-        {/* Note about customization */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="text-center mt-12"
-        >
-          <div className="glass rounded-xl p-6 max-w-2xl mx-auto">
-            <p className="text-muted-foreground text-sm">
-              We provide customized solutions tailored to the unique needs of various industries through innovative technologies and comprehensive features, enhancing efficiency and service quality.
-            </p>
-          </div>
         </motion.div>
       </div>
     </section>
