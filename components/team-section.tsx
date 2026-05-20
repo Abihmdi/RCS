@@ -6,18 +6,16 @@ import { Linkedin, Mail } from "lucide-react"
 
 const team = [
   {
-    name: "Ayip Farouk",
-    role: "Chief Executive Officer",
-    bio: "Having over 5 years of experience in product management across various stages, from early-stage startups to mid-stage companies, and at one of the largest e-commerce companies in Southeast Asia. Possessing several certifications in product management training as well as business consulting.",
-    phone: "+62 819 0549 3347",
-    initials: "AF",
+    name: "Abi Hamdi",
+    role: "Founder",
+    bio: "With over 7 years of experience in the field of information technology, have been involved in various projects including website development, application development, network management, security, and other aspects.",
+    initials: "AH",
   },
   {
-    name: "Abi Hamdi",
-    role: "Chief Technology Officer",
-    bio: "With over 7 years of experience in the field of information technology, have been involved in various projects including website development, application development, network management, security, and other aspects.",
-    phone: "+62 859 4722 1342",
-    initials: "AH",
+    name: "Ayip Farouk",
+    role: "Founder",
+    bio: "Having over 5 years of experience in product management across various stages, from early-stage startups to mid-stage companies, and at one of the largest e-commerce companies in Southeast Asia. Possessing several certifications in product management training as well as business consulting.",
+    initials: "AF",
   },
 ]
 
@@ -115,7 +113,7 @@ export function TeamSection() {
             className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6"
             style={{ fontFamily: "var(--font-bebas-neue)" }}
           >
-            LEADERSHIP
+            FOUNDER
           </h2>
           <p className="text-muted-foreground max-w-2xl leading-relaxed text-balance">
             Meet the experts behind RCS who drive innovation and deliver exceptional results for our clients.
