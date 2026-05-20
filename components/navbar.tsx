@@ -48,7 +48,7 @@ export function Navbar() {
             }}
             className="text-sm font-semibold tracking-tight text-[#FAFAFA]"
           >
-            RCS<span className="text-[#22D3EE]">.</span>
+            RCS<span className="text-[#FAFAFA]">.</span>
           </a>
 
           <div className="hidden md:flex items-center gap-6">
@@ -102,7 +102,7 @@ export function Navbar() {
                   e.preventDefault()
                   handleNavClick(link.href)
                 }}
-                className="text-xl font-medium text-[#FAFAFA] hover:text-[#22D3EE] transition-colors"
+                className="text-xl font-medium text-[#FAFAFA] hover:text-[#FAFAFA] transition-colors"
               >
                 {link.label}
               </a>

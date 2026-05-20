@@ -42,11 +42,11 @@ function TechnicalIllustration({ type }: { type: string }) {
         <rect fill="url(#grid1)" width="300" height="200" />
         {/* Main window frame */}
         <g transform="translate(60, 30)">
-          <path d="M0,120 L80,80 L180,80 L180,0 L80,0 L0,40 Z" fill="none" stroke="#22D3EE" strokeWidth="1" opacity="0.6" />
-          <path d="M180,80 L180,0 L100,40 L100,120 Z" fill="#22D3EE" fillOpacity="0.15" />
-          <path d="M0,40 L0,120 L100,120 L100,40 Z" fill="#22D3EE" fillOpacity="0.25" />
+          <path d="M0,120 L80,80 L180,80 L180,0 L80,0 L0,40 Z" fill="none" stroke="#FAFAFA" strokeWidth="1" opacity="0.6" />
+          <path d="M180,80 L180,0 L100,40 L100,120 Z" fill="#FAFAFA" fillOpacity="0.15" />
+          <path d="M0,40 L0,120 L100,120 L100,40 Z" fill="#FAFAFA" fillOpacity="0.25" />
           {/* Selected item highlight */}
-          <rect x="10" y="70" width="80" height="12" fill="#22D3EE" fillOpacity="0.4" rx="2" />
+          <rect x="10" y="70" width="80" height="12" fill="#FAFAFA" fillOpacity="0.4" rx="2" />
           {/* List items */}
           <rect x="10" y="50" width="60" height="8" fill="rgba(255,255,255,0.2)" rx="1" />
           <rect x="10" y="90" width="50" height="8" fill="rgba(255,255,255,0.2)" rx="1" />
@@ -71,18 +71,18 @@ function TechnicalIllustration({ type }: { type: string }) {
         <rect fill="url(#grid2)" width="200" height="150" />
         {/* Gear/System illustration */}
         <g transform="translate(50, 25)">
-          <circle cx="50" cy="50" r="35" fill="none" stroke="#22D3EE" strokeWidth="1" opacity="0.4" />
-          <circle cx="50" cy="50" r="20" fill="#22D3EE" fillOpacity="0.2" />
-          <circle cx="50" cy="50" r="8" fill="#22D3EE" fillOpacity="0.4" />
+          <circle cx="50" cy="50" r="35" fill="none" stroke="#FAFAFA" strokeWidth="1" opacity="0.4" />
+          <circle cx="50" cy="50" r="20" fill="#FAFAFA" fillOpacity="0.2" />
+          <circle cx="50" cy="50" r="8" fill="#FAFAFA" fillOpacity="0.4" />
           {/* Connecting nodes */}
-          <circle cx="10" cy="20" r="6" fill="#22D3EE" fillOpacity="0.3" />
-          <circle cx="90" cy="20" r="6" fill="#22D3EE" fillOpacity="0.3" />
-          <circle cx="10" cy="80" r="6" fill="#22D3EE" fillOpacity="0.3" />
-          <circle cx="90" cy="80" r="6" fill="#22D3EE" fillOpacity="0.3" />
-          <line x1="16" y1="23" x2="30" y2="35" stroke="#22D3EE" strokeWidth="1" opacity="0.3" />
-          <line x1="84" y1="23" x2="70" y2="35" stroke="#22D3EE" strokeWidth="1" opacity="0.3" />
-          <line x1="16" y1="77" x2="30" y2="65" stroke="#22D3EE" strokeWidth="1" opacity="0.3" />
-          <line x1="84" y1="77" x2="70" y2="65" stroke="#22D3EE" strokeWidth="1" opacity="0.3" />
+          <circle cx="10" cy="20" r="6" fill="#FAFAFA" fillOpacity="0.3" />
+          <circle cx="90" cy="20" r="6" fill="#FAFAFA" fillOpacity="0.3" />
+          <circle cx="10" cy="80" r="6" fill="#FAFAFA" fillOpacity="0.3" />
+          <circle cx="90" cy="80" r="6" fill="#FAFAFA" fillOpacity="0.3" />
+          <line x1="16" y1="23" x2="30" y2="35" stroke="#FAFAFA" strokeWidth="1" opacity="0.3" />
+          <line x1="84" y1="23" x2="70" y2="35" stroke="#FAFAFA" strokeWidth="1" opacity="0.3" />
+          <line x1="16" y1="77" x2="30" y2="65" stroke="#FAFAFA" strokeWidth="1" opacity="0.3" />
+          <line x1="84" y1="77" x2="70" y2="65" stroke="#FAFAFA" strokeWidth="1" opacity="0.3" />
         </g>
       </svg>
     )
@@ -100,18 +100,18 @@ function TechnicalIllustration({ type }: { type: string }) {
         {/* UI Components illustration */}
         <g transform="translate(30, 20)">
           {/* Button */}
-          <rect x="0" y="0" width="50" height="20" rx="4" fill="#22D3EE" fillOpacity="0.3" stroke="#22D3EE" strokeWidth="1" opacity="0.5" />
+          <rect x="0" y="0" width="50" height="20" rx="4" fill="#FAFAFA" fillOpacity="0.3" stroke="#FAFAFA" strokeWidth="1" opacity="0.5" />
           {/* Toggle */}
-          <rect x="70" y="5" width="30" height="12" rx="6" fill="rgba(255,255,255,0.1)" stroke="#22D3EE" strokeWidth="1" opacity="0.4" />
-          <circle cx="88" cy="11" r="5" fill="#22D3EE" fillOpacity="0.5" />
+          <rect x="70" y="5" width="30" height="12" rx="6" fill="rgba(255,255,255,0.1)" stroke="#FAFAFA" strokeWidth="1" opacity="0.4" />
+          <circle cx="88" cy="11" r="5" fill="#FAFAFA" fillOpacity="0.5" />
           {/* Card */}
-          <rect x="0" y="40" width="80" height="60" rx="4" fill="rgba(255,255,255,0.05)" stroke="#22D3EE" strokeWidth="1" opacity="0.3" />
+          <rect x="0" y="40" width="80" height="60" rx="4" fill="rgba(255,255,255,0.05)" stroke="#FAFAFA" strokeWidth="1" opacity="0.3" />
           <rect x="10" y="50" width="40" height="6" fill="rgba(255,255,255,0.2)" rx="1" />
           <rect x="10" y="62" width="60" height="4" fill="rgba(255,255,255,0.1)" rx="1" />
           <rect x="10" y="70" width="50" height="4" fill="rgba(255,255,255,0.1)" rx="1" />
           {/* Shapes */}
-          <ellipse cx="120" cy="30" rx="20" ry="10" fill="#22D3EE" fillOpacity="0.2" stroke="#22D3EE" strokeWidth="1" opacity="0.4" />
-          <rect x="100" y="60" width="40" height="40" fill="#22D3EE" fillOpacity="0.15" stroke="#22D3EE" strokeWidth="1" opacity="0.3" transform="rotate(15 120 80)" />
+          <ellipse cx="120" cy="30" rx="20" ry="10" fill="#FAFAFA" fillOpacity="0.2" stroke="#FAFAFA" strokeWidth="1" opacity="0.4" />
+          <rect x="100" y="60" width="40" height="40" fill="#FAFAFA" fillOpacity="0.15" stroke="#FAFAFA" strokeWidth="1" opacity="0.3" transform="rotate(15 120 80)" />
         </g>
       </svg>
     )
@@ -129,19 +129,19 @@ function TechnicalIllustration({ type }: { type: string }) {
         {/* Neural network / AI illustration */}
         <g transform="translate(50, 30)">
           {/* Input layer */}
-          <circle cx="0" cy="30" r="8" fill="#22D3EE" fillOpacity="0.3" />
-          <circle cx="0" cy="70" r="8" fill="#22D3EE" fillOpacity="0.3" />
-          <circle cx="0" cy="110" r="8" fill="#22D3EE" fillOpacity="0.3" />
+          <circle cx="0" cy="30" r="8" fill="#FAFAFA" fillOpacity="0.3" />
+          <circle cx="0" cy="70" r="8" fill="#FAFAFA" fillOpacity="0.3" />
+          <circle cx="0" cy="110" r="8" fill="#FAFAFA" fillOpacity="0.3" />
           {/* Hidden layer */}
-          <circle cx="80" cy="20" r="8" fill="#22D3EE" fillOpacity="0.4" />
-          <circle cx="80" cy="50" r="8" fill="#22D3EE" fillOpacity="0.4" />
-          <circle cx="80" cy="80" r="8" fill="#22D3EE" fillOpacity="0.4" />
-          <circle cx="80" cy="110" r="8" fill="#22D3EE" fillOpacity="0.4" />
+          <circle cx="80" cy="20" r="8" fill="#FAFAFA" fillOpacity="0.4" />
+          <circle cx="80" cy="50" r="8" fill="#FAFAFA" fillOpacity="0.4" />
+          <circle cx="80" cy="80" r="8" fill="#FAFAFA" fillOpacity="0.4" />
+          <circle cx="80" cy="110" r="8" fill="#FAFAFA" fillOpacity="0.4" />
           {/* Output layer */}
-          <circle cx="160" cy="50" r="10" fill="#22D3EE" fillOpacity="0.5" />
-          <circle cx="160" cy="90" r="10" fill="#22D3EE" fillOpacity="0.5" />
+          <circle cx="160" cy="50" r="10" fill="#FAFAFA" fillOpacity="0.5" />
+          <circle cx="160" cy="90" r="10" fill="#FAFAFA" fillOpacity="0.5" />
           {/* Connections */}
-          <g stroke="#22D3EE" strokeWidth="0.5" opacity="0.3">
+          <g stroke="#FAFAFA" strokeWidth="0.5" opacity="0.3">
             <line x1="8" y1="30" x2="72" y2="20" />
             <line x1="8" y1="30" x2="72" y2="50" />
             <line x1="8" y1="30" x2="72" y2="80" />
@@ -195,7 +195,7 @@ export function ServicesSection() {
 
             <a 
               href="#contact" 
-              className="inline-flex items-center gap-2 text-sm text-[#FAFAFA] hover:text-[#22D3EE] transition-colors font-mono"
+              className="inline-flex items-center gap-2 text-sm text-[#FAFAFA] hover:text-[#FAFAFA] transition-colors font-mono"
             >
               Start a project <ArrowUpRight size={14} />
             </a>

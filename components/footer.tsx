@@ -13,7 +13,7 @@ export function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-6">
             <span className="text-sm font-semibold tracking-tight text-[#FAFAFA]">
-              RCS<span className="text-[#22D3EE]">.</span>
+              RCS<span className="text-[#FAFAFA]">.</span>
             </span>
             <span className="text-xs text-[#71717A]">
               Ruang Cipta Solusi

@@ -11,19 +11,19 @@
   --card-foreground: #FAFAFA;
   --popover: #111113;
   --popover-foreground: #FAFAFA;
-  --primary: #22D3EE;
+  --primary: #FAFAFA;
   --primary-foreground: #0A0A0B;
   --secondary: #111113;
   --secondary-foreground: #FAFAFA;
   --muted: #18181B;
   --muted-foreground: #71717A;
-  --accent: #22D3EE;
+  --accent: #FAFAFA;
   --accent-foreground: #0A0A0B;
   --destructive: #EF4444;
   --destructive-foreground: #FAFAFA;
   --border: rgba(255, 255, 255, 0.06);
   --input: #111113;
-  --ring: #22D3EE;
+  --ring: #FAFAFA;
   --radius: 0.5rem;
 }
 
@@ -89,5 +89,5 @@
 
 /* Selection */
 ::selection {
-  background: rgba(34, 211, 238, 0.2);
+  background: rgba(255, 255, 255, 0.2);
 }
