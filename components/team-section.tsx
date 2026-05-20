@@ -5,16 +5,16 @@ import { motion, useInView } from "framer-motion"
 
 const founders = [
   {
-    name: "Abi",
+    name: "Abi Hamdi",
     role: "Founder",
     bio: "With over 7 years of experience in the field of information technology, have been involved in various projects including website development, application development, network management, security, and other aspects.",
-    initials: "A",
+    initials: "AH",
   },
   {
-    name: "Ayip",
+    name: "Ayip Farouk",
     role: "Founder",
     bio: "Having over 5 years of experience in product management across various stages, from early-stage startups to mid-stage companies, and at one of the largest e-commerce companies in Southeast Asia. Possessing several certifications in product management training as well as business consulting.",
-    initials: "A",
+    initials: "AF",
   },
 ]
 

@@ -5,6 +5,7 @@ import { ServicesSection } from "@/components/services-section"
 import { TeamSection } from "@/components/team-section"
 import { PortfolioSection } from "@/components/portfolio-section"
 import { ContactSection } from "@/components/contact-section"
+import { FallingLetters } from "@/components/falling-letters"
 import { Footer } from "@/components/footer"
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
       <TeamSection />
       <PortfolioSection />
       <ContactSection />
+      <FallingLetters />
       <Footer />
     </main>
   )
